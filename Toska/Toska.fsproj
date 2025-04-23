@@ -7,10 +7,15 @@
 
     <ItemGroup>
         <Compile Include="Program.fs"/>
+        <Compile Include="Test\ProgramTests.fs" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="FsUnit" Version="7.0.1" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+      <PackageReference Include="NUnit" Version="4.3.2" />
       <PackageReference Include="Suave" Version="2.7.0-beta1" />
+      <PackageReference Include="System.IO.Pipelines" Version="10.0.0-preview.3.25171.5" />
     </ItemGroup>
 
 </Project>
