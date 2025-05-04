@@ -5,9 +5,10 @@ open Suave.Filters
 open Suave.Operators
 open Suave.Successful
 open Suave.RequestErrors
+open Serilog
 
-// For more information see https://aka.ms/fsharp-console-apps
-printfn "Hello from F#"
+
+Log.Logger <- LoggerConfiguration().CreateLogger()
 
 let formatQueryParams (query: seq<string * string option>) =
         query
@@ -35,6 +36,7 @@ let echoRoute =
 
 // Function to create the server configuration
 let createConfig bindings =
+    Log.Information("Applying server configuration")
     { defaultConfig with bindings = bindings }
 
 // Function to create the web application (routes)
@@ -42,6 +44,7 @@ let createWebApp () = echoRoute
 
 // Function to start the server (used in production)
 let startServer bindings =
+    Log.Information("Starting Server...") // Log the value of bindings
     let config = createConfig bindings
     let webApp = createWebApp()
     startWebServer config webApp
