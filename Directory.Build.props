@@ -1,0 +1,6 @@
+<Project>
+    <PropertyGroup>
+        <Nullable>enable</Nullable> <!-- Enables nullable reference types -->
+        <ImplicitUsings>enable</ImplicitUsings> <!-- Enables implicit global usings -->
+    </PropertyGroup>
+</Project>

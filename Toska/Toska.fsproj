@@ -2,7 +2,9 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
+        <LangVersion>preview</LangVersion> <!-- Enables preview features if needed -->
+        <GenerateProgramFile>false</GenerateProgramFile> <!-- Prevents F# compiler from generating Program.fs with empty main -->
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,17 +14,16 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="FsUnit" Version="7.0.1" />
-      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
-      <PackageReference Include="NUnit" Version="4.3.2" />
-      <PackageReference Include="Serilog" Version="4.2.1-dev-02352" />
-      <PackageReference Include="Suave" Version="2.7.0-beta1" />
-      <PackageReference Include="System.IO.Pipelines" Version="10.0.0-preview.3.25171.5" />
-      <PackageReference Include="xunit" Version="2.9.3" />
-      <PackageReference Include="xunit.runner.visualstudio" Version="3.1.0">
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        <PrivateAssets>all</PrivateAssets>
-      </PackageReference>
+        <PackageReference Include="FsUnit" Version="7.0.1" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+        <PackageReference Include="NUnit" Version="4.3.2" />
+        <PackageReference Include="Serilog" Version="4.2.1-dev-02352" />
+        <PackageReference Include="Suave" Version="2.7.0-beta1" />
+        <PackageReference Include="xunit" Version="2.9.3" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="3.1.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
     </ItemGroup>
 
 </Project>
