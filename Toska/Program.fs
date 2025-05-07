@@ -49,5 +49,10 @@ let startServer bindings =
     let webApp = createWebApp()
     startWebServer config webApp
 
-let bindings = [ HttpBinding.createSimple HTTP "127.0.0.1" 8080 ]
-startServer bindings
+// Move the actual execution code inside the main function
+// but keep the definitions accessible for testing
+[<EntryPoint>]
+let main argv =
+    let bindings = [ HttpBinding.createSimple HTTP "127.0.0.1" 8080 ]
+    startServer bindings
+    0 // Return success code
